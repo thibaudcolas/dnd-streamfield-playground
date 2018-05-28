@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.stream-field {
+  position: relative;
+  padding: 21px;
+}
+
+.block {
+  position: relative;
+  padding: 4px;
+}
+
+.block > .block-container {
+  border: 1px solid lightGrey;
+  border-radius: 3px;
+  overflow: hidden;
+  background: white;
+}
+
+.block > .block-container > header {
+  display: flex;
+  padding: 8px;
+  background: #fafafa;
+  cursor: grab;
+}
+
+.block > .block-container > header h3 {
+  flex: 1 0 auto;
+  margin: 0;
+}
+
+.block > .block-container > header > aside {
+  flex: 0 0 auto;
+}
+
+.block > .block-container > header > aside > .type {
+  display: block;
+}
+
+.block:hover > .block-container > header > aside > .type {
+  display: none;
+}
+
+.block > .block-container > header > aside > .actions {
+  display: none;
+}
+
+.block:hover > .block-container > header > aside > .actions {
+  display: block;
+}
+
+.block:hover > .block-container > header > aside > .actions > button {
+  appearance: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.block:hover > .block-container > section {
+  background: #f4fcfc;
+}
+
+.block > .block-container > section {
+  transition: max-height 0.3s ease-in-out;
+  transition-property: max-height, background;
+}
+
+.block > .block-container > section > .content {
+  padding: 12px;
+  border-top: 1px solid lightGrey;
+}
+
+.block.closed > .block-container > section {
+  max-height: 0;
+}
+
+.field-row-panel {
+  display: flex;
+}
+
+.field-row-panel label {
+  flex: 1 0 auto;
+}
+
+button.add {
+  position: absolute;
+  appearance: none;
+  border: none;
+  color: green;
+  font-weight: bold;
+  background: none;
+  top: 21px;
+  transform: translate(calc(4px - 100%), -50%);
+  font-size: 30px;
+  line-height: 30px;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+button.add.after {
+  top: initial;
+  bottom: 0;
+  transform: translate(-100%, 50%);
+}
